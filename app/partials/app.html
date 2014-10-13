@@ -1,0 +1,31 @@
+<div class='container' ng-controller="ChoreController">
+  <h1>Chores</h1>
+
+  <div ng-repeat='chore in chores'>
+    {{chore.title}}
+    {{chore.description}}
+    <button class="btn btn-info" ng-click='setEditChore(chore);'>Edit Chore</button>
+    <button class="btn btn-danger pull-right" ng-click='deleteChore(chore);'>Delete Chore</button>
+  </div>
+
+  <div ng-show="!editable">
+    <h1>New Chore </h1>
+    <p>Title:  {{title}}</p>
+    <p>Description: {{description}} <p>
+    <form name="personForm">
+      <input id='input' type="text" ng-model="title" placeholder="Tile of Chore">
+      <input id='input' type="text" ng-model="description" placeholder="Description of Chore">
+      <button class="btn btn-success" ng-click='create()'>Create Chore</button>
+    </form>
+  </div>
+
+  <div ng-show="editable">
+    <h1> Editing {{editedChore.title}} Chore</h1>
+    <form name="personForm">
+      <input id='input' type="text" ng-model="editedChore.title" placeholder="Tile of Chore">
+      <input id='input' type="text" ng-model="editedChore.description" placeholder="Description of Chore">
+      <button  class="btn btn-info" ng-click='edit(editedChore)'>Edit Chore</button>
+      <button  class="btn btn-default pull-right" ng-click='cancelEdit()'>Cancel</button>
+    </form>
+  </div>
+</div>
