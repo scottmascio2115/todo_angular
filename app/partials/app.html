@@ -2,10 +2,14 @@
   <h1>Chores</h1>
 
   <div ng-repeat='chore in chores'>
+    <p>
     {{chore.title}}
+    </p>
+    <p>
     {{chore.description}}
-    <button class="btn btn-info" ng-click='setEditChore(chore);'>Edit Chore</button>
-    <button class="btn btn-danger pull-right" ng-click='deleteChore(chore);'>Delete Chore</button>
+    </p>
+    <button class="btn btn-info btn-sm" ng-click='setEditChore(chore);'>Edit Chore</button>
+    <button class="btn btn-danger pull-right btn-sm" ng-click='deleteChore(chore);'>Delete Chore</button>
   </div>
 
   <div ng-show="!editable">
@@ -13,9 +17,13 @@
     <p>Title:  {{title}}</p>
     <p>Description: {{description}} <p>
     <form name="personForm">
-      <input id='input' type="text" ng-model="title" placeholder="Tile of Chore">
-      <input id='input' type="text" ng-model="description" placeholder="Description of Chore">
-      <button class="btn btn-success" ng-click='create()'>Create Chore</button>
+      <div class="form-group">
+        <input id='input' class="form-control" type="text" ng-model="title" placeholder="Tile of Chore">
+      </div>
+      <div class="form-group">
+        <input id='input' class="form-control" type="text" ng-model="description" placeholder="Description of Chore">
+      </div>
+      <button class="btn btn-success btn-sm" ng-click='create()'>Create Chore</button>
     </form>
   </div>
 
@@ -24,8 +32,8 @@
     <form name="personForm">
       <input id='input' type="text" ng-model="editedChore.title" placeholder="Tile of Chore">
       <input id='input' type="text" ng-model="editedChore.description" placeholder="Description of Chore">
-      <button  class="btn btn-info" ng-click='edit(editedChore)'>Edit Chore</button>
-      <button  class="btn btn-default pull-right" ng-click='cancelEdit()'>Cancel</button>
+      <button  class="btn btn-info btn-sm" ng-click='edit(editedChore)'>Edit Chore</button>
+      <button  class="btn btn-default pull-right btn-sm" ng-click='cancelEdit()'>Cancel</button>
     </form>
   </div>
 </div>
