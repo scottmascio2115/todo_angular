@@ -18,19 +18,19 @@ app.factory('API', ['$http', function($http) {
   var API = {};
 
   API.allChores = function(){
-    return $http.get('http://localhost:3000/');
+    return $http.get('http://serene-bastion-9183.herokuapp.com/');
   };
 
   API.createChore = function(title, description){
-    return $http.post('http://localhost:3000/chores', {chore: { title: title, description: description}});
+    return $http.post('http://serene-bastion-9183.herokuapp.com/chores', {chore: { title: title, description: description}});
   };
 
   API.editChore = function(chore){
-    return $http.put('http://localhost:3000/chores/' + chore.id, {chore: { title: chore.title, description: chore.description}});
+    return $http.put('http://serene-bastion-9183.herokuapp.com/chores/' + chore.id, {chore: { title: chore.title, description: chore.description}});
   };
 
   API.deleteChore = function(chore){
-    return $http.delete('http://localhost:3000/chores/' + chore.id);
+    return $http.delete('http://serene-bastion-9183.herokuapp.com/chores/' + chore.id);
   };
 
   return API;
